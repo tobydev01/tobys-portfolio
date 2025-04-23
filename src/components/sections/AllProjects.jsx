@@ -1,59 +1,50 @@
 import React from "react";
 import { RevealOnScroll } from "../RevealOnScroll";
 import { ExternalLink } from "../ExternalLink";
-import { Link } from "react-router-dom";
 
-import QuestSystemThumb from "../images/QuestSystem.png";
-import DunegonSystemThumb from "../images/DungeonSystemShowcase.png";
-
-export const Projects = () => {
+export const AllProjects = () => {
   const allProjects = [
     {
-      title: "Quest System",
-      desc: "A fully functional Quest System which includes a journal log book, a daily collect herb quest, and a collect herb quest to start a storyline.",
+      title: "place holder",
+      desc: "placeholder",
       tags: ["Lua", "UI", "DataStoreService", "RemoteEvents"],
-      videoUrl:
-        "https://drive.google.com/file/d/13bUQHskrE2Q6N3HXG6LVlE828uwyAebY/view",
-      thumbnail: QuestSystemThumb,
+      url: "https://your-roblox-link.com/quest-system",
+      thumbnail:
+        "https://tr.rbxcdn.com/abcd1234efgh5678ijkl9012mnop3456/768/432/Image/Png",
     },
     {
-      title: "Dunegons System",
-      desc: "A fully functional Dungeon System, with four different maps, and then a treausre room at the end. This showcases AI & Pathfinding as you must kill enemies coming out of the floor to move onto the next room.",
-      tags: ["Lua", "Pathfinding", "Multiplayer", "AI"],
-      videoUrl:
-        "https://drive.google.com/file/d/1FoH1k-ONiDtXkPcq-unqpD8eZx9WzSa5/view?usp=sharing",
-      thumbnail: DunegonSystemThumb,
+      title: "placeholder",
+      desc: "placeholder",
+      tags: ["Lua", "Pathfinding", "Multiplayer", "UI"],
+      url: "https://www.roblox.com/games/1234567890/Epic-Roblox-Adventure",
+      thumbnail:
+        "https://tr.rbxcdn.com/xyz9876abcd5432efgh1098ijkl7654/768/432/Image/Png",
     },
-    // …other projects
+    // Add your additional projects here
   ];
-
-  // Only show top 3 featured projects
-  const featured = allProjects.slice(0, 3);
 
   return (
     <section
-      id="projects"
+      id="all-projects"
       className="min-h-screen flex flex-col items-center justify-center py-20"
     >
       <RevealOnScroll>
-        <div className="max-w-5xl mx-auto px-4 space-y-8">
+        <div className="max-w-6xl mx-auto px-4 space-y-8">
           <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center">
-            Featured Projects
+            All Projects
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {featured.map((p, i) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {allProjects.map((p, i) => (
               <div
                 key={i}
                 className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246,0.1)] transition-all"
               >
-                {/* always show thumbnail */}
                 <img
                   src={p.thumbnail}
                   alt={p.title}
                   className="w-full h-40 object-cover rounded-md mb-4"
                 />
-
                 <h3 className="text-xl font-bold mb-2">{p.title}</h3>
                 <p className="text-gray-400 mb-4">{p.desc}</p>
 
@@ -68,24 +59,14 @@ export const Projects = () => {
                   ))}
                 </div>
 
-                {/* link to video if present, else to url */}
                 <ExternalLink
-                  href={p.videoUrl || p.url}
+                  href={p.url}
                   className="text-blue-400 hover:text-blue-300 transition-colors"
                 >
                   View Project in Action →
                 </ExternalLink>
               </div>
             ))}
-          </div>
-
-          <div className="text-center mt-8">
-            <Link
-              to="/projects/all"
-              className="inline-block bg-blue-500 text-white py-3 px-8 rounded font-medium transition hover:-translate-y-0.5 hover:shadow-[0_2px_8px_rgba(59,130,246,0.4)]"
-            >
-              See All Projects
-            </Link>
           </div>
         </div>
       </RevealOnScroll>
