@@ -1,7 +1,12 @@
-// components/MobileMenu.jsx
 import React from "react";
 
 export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
+  const scrollToSection = (id) => {
+    setMenuOpen(false);
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div
       className={`
@@ -18,61 +23,26 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
     >
       <button
         onClick={() => setMenuOpen(false)}
-        className="absolute top-6 right-6 text-white text-3xl focus:outline-none cursor-pointer"
+        className="absolute top-6 right-6 text-white text-3xl focus:outline-none"
         aria-label="Close Menu"
       >
         &times;
       </button>
 
-      <a
-        href="#home"
-        onClick={() => setMenuOpen(false)}
-        className={`text-2xl font-semibold text-white my-4 transform transition-transform duration-300
-                ${
-                  menuOpen
-                    ? "opacity-100 translate-y-0"
-                    : "opacity-0 translate-y-5"
-                }     
-            `}
-      >
-        Home
-      </a>
-
-      <a
-        href="#about"
-        onClick={() => setMenuOpen(false)}
-        className={`text-2xl font-semibold text-white my-4 transform transition-transform duration-300
+      {["home", "about", "projects", "contact"].map((sec, i) => (
+        <button
+          key={sec}
+          onClick={() => scrollToSection(sec)}
+          className={`
+            text-2xl font-semibold text-white my-4 transform transition-transform duration-300 focus:outline-none
             ${
               menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
-            }     
-        `}
-      >
-        About
-      </a>
-
-      <a
-        href="#projects"
-        onClick={() => setMenuOpen(false)}
-        className={`text-2xl font-semibold text-white my-4 transform transition-transform duration-300
-            ${
-              menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
-            }     
-        `}
-      >
-        Projects
-      </a>
-
-      <a
-        href="#contact"
-        onClick={() => setMenuOpen(false)}
-        className={`text-2xl font-semibold text-white my-4 transform transition-transform duration-300
-            ${
-              menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
-            }     
-        `}
-      >
-        Contact
-      </a>
+            }
+          `}
+        >
+          {sec.charAt(0).toUpperCase() + sec.slice(1)}
+        </button>
+      ))}
     </div>
   );
 };
