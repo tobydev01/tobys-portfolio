@@ -18,6 +18,10 @@ export const Footer = () => {
             </ExternalLink>
           </p>
           <p>Discord: tobys01</p>
+          <p>
+            PLEASE NOTE: If we agree to a deal for a commission, and you hire
+            me, you MUST agree to & sign a Terms of Service.
+          </p>
         </div>
 
         {/* Links */}

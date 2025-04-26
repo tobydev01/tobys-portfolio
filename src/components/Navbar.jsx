@@ -1,14 +1,28 @@
 import React, { useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export const Navbar = ({ menuOpen, setMenuOpen }) => {
+  const location = useLocation();
+  const navigate = useNavigate();
+
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
   }, [menuOpen]);
 
   const scrollToSection = (id) => {
+    const doScroll = () => {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    };
+
+    if (location.pathname !== "/") {
+      navigate("/", { replace: false });
+      setTimeout(doScroll, 100);
+    } else {
+      doScroll();
+    }
+
     setMenuOpen(false);
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -22,7 +36,6 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
             Toby's<span className="text-blue-500"> Commissions</span>
           </button>
 
-          {/* hamburger */}
           <button
             onClick={() => setMenuOpen((prev) => !prev)}
             className="w-7 h-5 relative cursor-pointer z-40 md:hidden focus:outline-none text-white text-2xl"
@@ -31,7 +44,6 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
             &#9776;
           </button>
 
-          {/* desktop links */}
           <div className="hidden md:flex items-center space-x-8">
             {["home", "about", "projects", "contact"].map((sec) => (
               <button

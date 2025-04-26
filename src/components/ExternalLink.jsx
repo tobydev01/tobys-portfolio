@@ -5,7 +5,6 @@ export const ExternalLink = ({ href, children, className }) => {
   const [showModal, setShowModal] = useState(false);
 
   const handleClick = (e) => {
-    // only intercept left-clicks without modifier keys
     if (
       e.button === 0 &&
       !e.metaKey &&
