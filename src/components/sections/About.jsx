@@ -41,7 +41,7 @@ export const About = () => {
       thumbnail:
         "https://tr.rbxcdn.com/180DAY-ba8bb255ffd79b0d88aee24e25a4abfd/768/432/Image/Webp/noFilter",
       url: "https://www.roblox.com/games/7715892268/UPDATE-VT-School-Buses",
-      views: 325900,
+      views: 326000,
     },
   ];
   const totalViews = contributions.reduce((sum, c) => sum + c.views, 0);

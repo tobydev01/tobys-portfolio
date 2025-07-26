@@ -1,4 +1,4 @@
 git add .
 git commit -m "describe update"
-git push -U origin main
+git push -u origin main
 npm run deploy
