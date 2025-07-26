@@ -34,7 +34,7 @@ export const About = () => {
       thumbnail:
         "https://tr.rbxcdn.com/180DAY-4f318280f1a23fdca727a8b647fbb711/768/432/Image/Webp/noFilter",
       url: "https://www.roblox.com/games/93361401490452/HUGE-UPDATE-AdrenaLane-BETA",
-      views: 238300,
+      views: 247500,
     },
     {
       title: "AC Transit: VT School Buses",
