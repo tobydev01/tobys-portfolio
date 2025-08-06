@@ -34,20 +34,31 @@ function App() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    fetch("https://api.ipify.org?format=json")
+    fetch("http://ip-api.com/json/")
       .then((res) => res.json())
       .then((data) => {
-        fetch(DISCORD_WEBHOOK_URL, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            content: `🌐 New visitor IP: \`${data.ip}\``,
-          }),
-        });
+        if (data.status === "success") {
+          const locationInfo = `
+            🌐 New visitor:
+            IP: \`${data.query}\`
+            Location: ${data.city}, ${data.regionName}, ${data.country}
+            Coordinates: (${data.lat}, ${data.lon})
+            ISP: ${data.isp}
+          `;
+          fetch(DISCORD_WEBHOOK_URL, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              content: locationInfo,
+            }),
+          });
+        } else {
+          console.error("Geolocation failed:", data.message);
+        }
       })
-      .catch((err) => console.error("Failed to log IP:", err));
+      .catch((err) => console.error("Failed to fetch geolocation:", err));
   }, []);
 
   return (
