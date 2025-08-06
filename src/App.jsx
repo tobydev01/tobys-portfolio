@@ -1,5 +1,4 @@
-// src/App.jsx
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 
@@ -27,9 +26,29 @@ function MainPage() {
   );
 }
 
+const DISCORD_WEBHOOK_URL =
+  "https://discord.com/api/webhooks/1402489149407105126/N2mzqHa00iCAnBF9aj61EYchMEbpv9a1MNDUgBtCqg5XMrlca76GMwJkcavH5K4cOT2W";
+
 function App() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    fetch("https://api.ipify.org?format=json")
+      .then((res) => res.json())
+      .then((data) => {
+        fetch(DISCORD_WEBHOOK_URL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            content: `🌐 New visitor IP: \`${data.ip}\``,
+          }),
+        });
+      })
+      .catch((err) => console.error("Failed to log IP:", err));
+  }, []);
 
   return (
     <>
@@ -47,7 +66,6 @@ function App() {
             <Route path="/" element={<MainPage />} />
             <Route path="/projects/all" element={<AllProjects />} />
             <Route path="/projects/:slug" element={<ProjectDetail />} />
-            {/* fallback to main page */}
             <Route path="*" element={<MainPage />} />
           </Routes>
         </Router>
