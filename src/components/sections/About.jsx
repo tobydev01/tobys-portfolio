@@ -34,14 +34,14 @@ export const About = () => {
       thumbnail:
         "https://tr.rbxcdn.com/180DAY-4f318280f1a23fdca727a8b647fbb711/768/432/Image/Webp/noFilter",
       url: "https://www.roblox.com/games/93361401490452/HUGE-UPDATE-AdrenaLane-BETA",
-      views: 247500,
+      views: 394100,
     },
     {
       title: "AC Transit: VT School Buses",
       thumbnail:
         "https://tr.rbxcdn.com/180DAY-ba8bb255ffd79b0d88aee24e25a4abfd/768/432/Image/Webp/noFilter",
       url: "https://www.roblox.com/games/7715892268/UPDATE-VT-School-Buses",
-      views: 326000,
+      views: 575500,
     },
   ];
   const totalViews = contributions.reduce((sum, c) => sum + c.views, 0);
