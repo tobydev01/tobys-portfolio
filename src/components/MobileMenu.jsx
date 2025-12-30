@@ -29,7 +29,7 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
         &times;
       </button>
 
-      {["home", "about", "projects", "contact"].map((sec, i) => (
+      {["home", "about", "projects"].map((sec, i) => (
         <button
           key={sec}
           onClick={() => scrollToSection(sec)}

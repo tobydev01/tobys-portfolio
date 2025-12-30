@@ -156,7 +156,7 @@ export const projects = [
     videoUrl: "N/A",
     thumbnail: PlaceholderThumb,
 
-    testimonialEnabled: true,
+    testimonialEnabled: false,
     testimonial: {
       name: "Ethan",
       text: "Toby is a very good script writer and works very fast, especially for how much I payed!",
@@ -182,8 +182,8 @@ export const projects = [
         "Delivered on time",
       ],
       gallery: [PlaceholderThumb],
-      // repoUrl: "https://github.com/yourusername/roblox-quest-system",
-      demoUrl: "N/A",
+      repoUrl: "https://github.com/yourusername/roblox-quest-system",
+      // demoUrl: "N/A",
       dateCompleted: "December, 2025",
       client: "Client: Ethan",
     },
