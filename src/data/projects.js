@@ -3,6 +3,7 @@ import QuestSystemThumb from "../components/images/QuestSystem.png";
 import DungeonSystemThumb from "../components/images/DungeonSystemShowcase.png";
 import MovementSystemThumb from "../components/images/MovementSystem.png";
 import UIThumb from "../components/images/UI.png";
+import PlaceholderThumb from "../components/images/Placeholder.png";
 
 export const projects = [
   {
@@ -143,7 +144,48 @@ export const projects = [
       demoUrl:
         "https://drive.google.com/file/d/1wAaySq1_pYlVMlc2nauvXgdpMcVYr-yD/view?usp=sharing",
       dateCompleted: "January, 2025",
-      // client: "Client: ezon",
+      client: "Client: ezon",
+    },
+  },
+
+  {
+    slug: "steal-a-planet",
+    title: "Steal A Planet",
+    desc: "Helped my client fix gamepass bugs in his game, and fix mathematical rarity issues with his planet spawn system.",
+    tags: ["Lua", "MarketplaceService"],
+    videoUrl: "N/A",
+    thumbnail: PlaceholderThumb,
+
+    testimonialEnabled: true,
+    testimonial: {
+      name: "Ethan",
+      text: "Toby is a very good script writer and works very fast, especially for how much I payed!",
+      rating: 5,
+    },
+    detailPage: true, // ← toggles the sub-page link
+
+    // ← this is your template for detailed sub-page content:
+    detail: {
+      longDescription: `
+        • Fixed gamepass bugs in the client's game.
+        • Resolved mathematical rarity issues with the planet spawn system.
+        • Ensured smooth gameplay experience for players.
+        • Improved overall game stability and performance.
+        • Collaborated closely with the client to meet their specific needs and requirements.
+        • Delivered the project on time and within budget.
+      `,
+      features: [
+        "Fixed gamepass bugs",
+        "Resolved rarity issues",
+        "Improved game stability",
+        "Collaborated with client",
+        "Delivered on time",
+      ],
+      gallery: [PlaceholderThumb],
+      // repoUrl: "https://github.com/yourusername/roblox-quest-system",
+      demoUrl: "N/A",
+      dateCompleted: "December, 2025",
+      client: "Client: Ethan",
     },
   },
 

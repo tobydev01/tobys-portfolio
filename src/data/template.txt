@@ -1,0 +1,35 @@
+{
+    slug: "",
+    title: "",
+    desc: "",
+    tags: ["Lua",],
+    videoUrl:
+      "",
+    thumbnail: ,
+
+    testimonialEnabled: true,
+    testimonial: {
+      name: "",
+      text: "",
+      rating: 5,
+    },
+    detailPage: true, // ← toggles the sub-page link
+
+    // ← this is your template for detailed sub-page content:
+    detail: {
+      longDescription: `
+        
+      `,
+      features: [
+        "",
+        "",
+        "",
+        "",
+      ],
+      gallery: [],
+      // repoUrl: "",
+      demoUrl: "",
+      dateCompleted: "",
+      client: "Client: ",
+    },
+  },

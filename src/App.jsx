@@ -21,7 +21,6 @@ function MainPage() {
       <Home />
       <About />
       <Projects />
-      <Contact />
       <Footer />
     </>
   );
