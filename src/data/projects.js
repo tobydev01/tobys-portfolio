@@ -1,0 +1,193 @@
+// all your project data, including detailPage flag and detail template
+import QuestSystemThumb from "../components/images/QuestSystem.png";
+import DungeonSystemThumb from "../components/images/DungeonSystemShowcase.png";
+import MovementSystemThumb from "../components/images/MovementSystem.png";
+import UIThumb from "../components/images/UI.png";
+import PlaceholderThumb from "../components/images/Placeholder.png";
+
+export const projects = [
+  {
+    slug: "quest-system",
+    title: "Quest System",
+    desc: "A production-ready Quest System featuring tiered storyline chains, a persistent journal UI with read/unread tracking, daily reset quests, and fully customizable reward packs — all backed by DataStoreService.",
+    tags: ["Lua", "UI", "DataStoreService", "RemoteEvents"],
+    videoUrl:
+      "https://drive.google.com/file/d/13bUQHskrE2Q6N3HXG6LVlE828uwyAebY/view",
+    thumbnail: QuestSystemThumb,
+
+    testimonialEnabled: true,
+    testimonial: {
+      name: "America",
+      text: "Toby is a very good script writer and works very fast, especially for how much I payed!",
+      rating: 5,
+    },
+    detailPage: true, // ← toggles the sub-page link
+
+    // ← this is your template for detailed sub-page content:
+    detail: {
+      longDescription: `
+        The Quest System I built supports:
+        • Tiered quest chains with branching conditions  
+        • A journal UI that saves read/unread status  
+        • Daily quests with reset timers  
+        • Customizable reward packs (XP, items, cosmetics)
+      `,
+      features: [
+        "Branching quest logic",
+        "Persistent save states via DataStoreService",
+        "Dynamic objectives (collect, kill, talk)",
+        "Rich UI with typewriter effect",
+      ],
+      gallery: [QuestSystemThumb],
+      // repoUrl: "https://github.com/yourusername/roblox-quest-system",
+      demoUrl: "https://youtu.be/your-demo-video",
+      dateCompleted: "March 2025",
+      client: "Client: America4332",
+    },
+  },
+
+  {
+    slug: "dungeon-system",
+    title: "Dungeon System",
+    desc: "A full multiplayer dungeon system with four hand-crafted maps and a treasure room. Features intelligent enemy AI using Roblox Pathfinding — enemies spawn from the floor and dynamically pursue players, requiring teamwork to progress.",
+    tags: ["Lua", "Pathfinding", "Multiplayer", "AI"],
+    videoUrl:
+      "https://drive.google.com/file/d/1FoH1k-ONiDtXkPcq-unqpD8eZx9WzSa5/view?usp=sharing",
+    thumbnail: DungeonSystemThumb,
+
+    testimonialEnabled: true,
+    testimonial: {
+      name: "Client: .",
+      text: "Toby was a pleasure to work with, and scripted my whole game in a very short time. Would hire again & recommend!",
+      rating: 5,
+    },
+    detailPage: false, // no sub-page
+    // no `detail` needed here
+  },
+
+  {
+    slug: "movement-system",
+    title: "Movement System",
+    desc: "A polished, game-feel-focused Movement System with double-tap sprint, four directional dashes with VFX particle trails, smooth camera locking, and fully customizable cooldowns — all handled over a clean Client/Server architecture.",
+    tags: ["Lua", "VFX", "Movement", "Client/Server Comms"],
+    videoUrl:
+      "https://drive.google.com/file/d/1-ZaE9P1NUbARy0X42Rq2vtcDyQhrsTH5/view?usp=sharing",
+    thumbnail: MovementSystemThumb,
+
+    testimonialEnabled: false,
+    testimonial: {
+      name: "America",
+      text: "Toby is a very good script writer and works very fast, especially for how much I payed!",
+      rating: 5,
+    },
+    detailPage: true, // ← toggles the sub-page link
+
+    // ← this is your template for detailed sub-page content:
+    detail: {
+      longDescription: `
+        The Movement System I built supports:
+        • Double Tapping W to sprint
+        • 4 different dash types: forward, backward, left, and right  
+        • Custom VFX trails on each dash
+        • Customizable dash speed and cooldowns  
+        • Client/Server communication for dash effects
+        • Smooth camera transitions during dashes  
+        • Camera locking to determine dash direction
+      `,
+      features: [
+        "Double tap W to sprint",
+        "4 different dash types",
+        "Custom VFX trails",
+        "Customizable dash speed and cooldowns",
+      ],
+      gallery: [MovementSystemThumb],
+      // repoUrl: "https://github.com/yourusername/roblox-quest-system",
+      demoUrl: "https://youtu.be/your-demo-video",
+      dateCompleted: "April 26, 2025",
+      client: "Client: ezon",
+    },
+  },
+
+  {
+    slug: "ui-system",
+    title: "UI System",
+    desc: "A comprehensive UI suite built from scratch — includes a working gamepass shop, smooth TweenService animations, typewriter text effects, a map teleportation system, a day/night settings panel, and a car spawner, all in one cohesive package.",
+    tags: ["Lua", "UI", "TweenService", "Animations"],
+    videoUrl:
+      "https://drive.google.com/file/d/1wAaySq1_pYlVMlc2nauvXgdpMcVYr-yD/view?usp=sharing",
+    thumbnail: UIThumb,
+
+    testimonialEnabled: false,
+    detailPage: true, // ← toggles the sub-page link
+
+    // ← this is your template for detailed sub-page content:
+    detail: {
+      longDescription: `
+        The UI I scripted supports:
+        • A shop system with working gamepasses/dev products.
+        • A custom tweening animation system for UI elements.
+        • A typewriter effect for text elements.
+        • A custom tweening system for animations.
+        • A map system with working teleportation to different areas.
+        • A settings system with working day/night cycle & weather controls.
+        • A car spawning system with working car models.
+      `,
+      features: [
+        "Custom tweening animation system",
+        "Typewriter effect for text",
+        "Custom tweening system for animations",
+        "Shop system with working gamepasses/dev products",
+        "Map system with working teleportation to different areas",
+      ],
+      gallery: [MovementSystemThumb],
+      // repoUrl: "https://github.com/yourusername/roblox-quest-system",
+      demoUrl:
+        "https://drive.google.com/file/d/1wAaySq1_pYlVMlc2nauvXgdpMcVYr-yD/view?usp=sharing",
+      dateCompleted: "January, 2025",
+      client: "Client: ezon",
+    },
+  },
+
+  {
+    slug: "steal-a-planet",
+    title: "Steal A Planet",
+    desc: "Diagnosed and resolved critical gamepass purchase bugs via MarketplaceService, and rewrote the planet spawn system's rarity algorithm to eliminate probability drift — resulting in a noticeably fairer and more stable player experience.",
+    tags: ["Lua", "MarketplaceService"],
+    videoUrl: "N/A",
+    thumbnail: PlaceholderThumb,
+
+    testimonialEnabled: false,
+    testimonial: {
+      name: "Ethan",
+      text: "Toby is a very good script writer and works very fast, especially for how much I payed!",
+      rating: 5,
+    },
+    detailPage: true, // ← toggles the sub-page link
+
+    // ← this is your template for detailed sub-page content:
+    detail: {
+      longDescription: `
+        • Fixed gamepass bugs in the client's game.
+        • Resolved mathematical rarity issues with the planet spawn system.
+        • Ensured smooth gameplay experience for players.
+        • Improved overall game stability and performance.
+        • Collaborated closely with the client to meet their specific needs and requirements.
+        • Delivered the project on time and within budget.
+      `,
+      features: [
+        "Fixed gamepass bugs",
+        "Resolved rarity issues",
+        "Improved game stability",
+        "Collaborated with client",
+        "Delivered on time",
+      ],
+      gallery: [PlaceholderThumb],
+      repoUrl: "https://github.com/yourusername/roblox-quest-system",
+      // demoUrl: "N/A",
+      dateCompleted: "December, 2025",
+      client: "Client: Ethan",
+    },
+  },
+
+  // …more projects…
+];
