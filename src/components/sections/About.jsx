@@ -34,7 +34,7 @@ export const About = () => {
       thumbnail:
         "https://tr.rbxcdn.com/180DAY-4f318280f1a23fdca727a8b647fbb711/768/432/Image/Webp/noFilter",
       url: "https://www.roblox.com/games/93361401490452/HUGE-UPDATE-AdrenaLane-BETA",
-      views: 770700,
+      views: 1500000,
     },
     {
       title: "AC Transit: VT School Buses",
@@ -115,13 +115,13 @@ export const About = () => {
               professional experience building high-quality, production-ready
               game systems. I specialize in Lua scripting and have shipped
               systems for games that have collectively amassed over 1.8 million
-              plays. From intricate quest chains and AI-driven dungeon combat
-              to polished UI suites and responsive movement frameworks, I
-              engineer solutions that feel great to play. I’m also fluent in
-              JavaScript, Python, and TypeScript, so I can handle everything
-              from Discord bot integrations to full backend logic. If you need
-              a developer who delivers on time, communicates clearly, and takes
-              pride in the craft — let’s work together.
+              plays. From intricate quest chains and AI-driven dungeon combat to
+              polished UI suites and responsive movement frameworks, I engineer
+              solutions that feel great to play. I’m also fluent in JavaScript,
+              Python, and TypeScript, so I can handle everything from Discord
+              bot integrations to full backend logic. If you need a developer
+              who delivers on time, communicates clearly, and takes pride in the
+              craft — let’s work together.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
