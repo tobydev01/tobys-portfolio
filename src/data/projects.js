@@ -70,8 +70,7 @@ export const projects = [
     title: "Movement System",
     desc: "A polished, game-feel-focused Movement System with double-tap sprint, four directional dashes with VFX particle trails, smooth camera locking, and fully customizable cooldowns — all handled over a clean Client/Server architecture.",
     tags: ["Lua", "VFX", "Movement", "Client/Server Comms"],
-    videoUrl:
-      "https://drive.google.com/file/d/1-ZaE9P1NUbARy0X42Rq2vtcDyQhrsTH5/view?usp=sharing",
+    videoUrl: "N/A",
     thumbnail: MovementSystemThumb,
 
     testimonialEnabled: false,
