@@ -40,7 +40,8 @@ export const projects = [
       ],
       gallery: [QuestSystemThumb],
       // repoUrl: "https://github.com/yourusername/roblox-quest-system",
-      demoUrl: "https://youtu.be/your-demo-video",
+      demoUrl:
+        "https://drive.google.com/file/d/13bUQHskrE2Q6N3HXG6LVlE828uwyAebY/view",
       dateCompleted: "March 2025",
       client: "Client: America4332",
     },
@@ -101,7 +102,7 @@ export const projects = [
       ],
       gallery: [MovementSystemThumb],
       // repoUrl: "https://github.com/yourusername/roblox-quest-system",
-      demoUrl: "https://youtu.be/your-demo-video",
+      // demoUrl: "https://youtu.be/your-demo-video",
       dateCompleted: "April 26, 2025",
       client: "Client: ezon",
     },
@@ -155,7 +156,7 @@ export const projects = [
     videoUrl: "N/A",
     thumbnail: PlaceholderThumb,
 
-    testimonialEnabled: false,
+    testimonialEnabled: true,
     testimonial: {
       name: "Ethan",
       text: "Toby is a very good script writer and works very fast, especially for how much I payed!",
@@ -181,7 +182,7 @@ export const projects = [
         "Delivered on time",
       ],
       gallery: [PlaceholderThumb],
-      repoUrl: "https://github.com/yourusername/roblox-quest-system",
+      // repoUrl: "https://github.com/yourusername/roblox-quest-system",
       // demoUrl: "N/A",
       dateCompleted: "December, 2025",
       client: "Client: Ethan",
